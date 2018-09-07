@@ -15,6 +15,8 @@ public class main {
 
         // ading the first node in the chain
         blockchain.add(new Block("Hi im the first block","0"));
+        System.out.println("Mining block -- 0");
+        blockchain.get(0).mineBlock(mDifficulty);
 
         // adding the rest of the nodes
         for (int i = 1; i < mNumberOfBlocks; i++)
@@ -22,15 +24,11 @@ public class main {
             //add our blocks to the blockchain ArrayList:
             String data = "Hi in the " + Integer.toString(i) + " block";
             blockchain.add(new Block(data, blockchain.get(i-1).hash));
-        }
 
-        // mining the blockcahin
-        for (int i = 0; i < mNumberOfBlocks; i++)
-        {
+            // mining the block
             System.out.println("Mining block -- " + Integer.toString(i));
             blockchain.get(i).mineBlock(mDifficulty);
         }
-
         System.out.println("\nBlockchain is Valid: " + isChainValid());
 
 
