@@ -1,4 +1,6 @@
 Block chain project
 
 
-looking into Block chain 
+looking into Block chain
+
+-- look at the "Merkle Root" in relation to block chain and maths etc...
