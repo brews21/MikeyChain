@@ -38,6 +38,9 @@ public class main {
         addBlock(genesis);
 
         //testing
+        /*
+        end to end testing of send block from one wallet to another
+         */
         Block block1 = new Block(genesis.hash);
         System.out.println("\nWalletA's balance is: " + walletA.getBalance());
         System.out.println("\nWalletA is Attempting to send funds (40) to WalletB...");
@@ -66,7 +69,7 @@ public class main {
     public static Boolean isChainValid() {
         Block currentBlock;
         Block previousBlock;
-        String hashTarget = new String(new char[difficulty]).replace('\0', '0');
+        String hashTarget = new String(new char[difficulty]).replace('\0', '0'); // this creates a string of n number of "0"
         HashMap<String,TransactionOutput> tempUTXOs = new HashMap<String,TransactionOutput>(); //a temporary working list of unspent transactions at a given block state.
         tempUTXOs.put(genesisTransaction.outputs.get(0).id, genesisTransaction.outputs.get(0));
 
