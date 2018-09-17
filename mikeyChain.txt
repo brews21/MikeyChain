@@ -7,7 +7,7 @@ looking into Block chain
 -- look in to the minning part
     -- still not sure why it looks for a substring to confirm/ state the block has been mined
     -- or why it createsa substring of "0" and replaces the section
--- look at the "Merkle Root" in relation to block chain and maths etc...
+-- look at the "Merkle Root" adn "Elliptic-Curve cryptography" in relation to block chain and maths etc...
 -- transactions input/ output process
 
 -- what are miners checking/ solving
