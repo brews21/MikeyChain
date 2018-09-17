@@ -1,16 +1,18 @@
 import java.security.Security;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.HashMap;
+
 import com.google.gson.GsonBuilder;
 import MikeyChain.Wallet; // <--- importing the package i made in the wallet class
 
 public class main {
-    public static ArrayList<Block> blockchain = new ArrayList<Block>();
-
+    public static ArrayList<Block> mBlockchain = new ArrayList<Block>();
+    public static HashMap<String,TransactionOutput> UTXOs = new HashMap<String,TransactionOutput>(); //list of all unspent transactions.
+    public static int mDifficulty = 5;
     public static Wallet walletA;
     public static Wallet walletB;
 
-    public static int mDifficulty = 5;
 
     public static void main(String[] args)
     {
@@ -41,9 +43,9 @@ public class main {
         String hashTarget = new String(new char[mDifficulty]).replace('\0', '0');
 
         //loop through blockchain to check hashes:
-        for(int i=1; i < blockchain.size(); i++) {
-            currentBlock = blockchain.get(i);
-            previousBlock = blockchain.get(i-1);
+        for(int i=1; i < mBlockchain.size(); i++) {
+            currentBlock = mBlockchain.get(i);
+            previousBlock = mBlockchain.get(i-1);
             //compare registered hash and calculated hash:
             if(!currentBlock.hash.equals(currentBlock.calculateHash()) ){
                 System.out.println("Current Hashes not equal");
